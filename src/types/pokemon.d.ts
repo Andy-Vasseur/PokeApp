@@ -50,4 +50,4 @@ declare module namespace {
 
 }
 
-export { namespace }
+export { Pokemon }
