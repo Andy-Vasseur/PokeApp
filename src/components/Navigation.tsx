@@ -8,7 +8,7 @@ export default function Navigation() {
 
   return (
     <div className="flex justify-between items-center p-4">
-      <Link href="/">
+      <Link href="/" className="animate-bounce hover:animate-none">
         <Image
             src={Logo}
             alt="Logo PokeApp"
@@ -47,13 +47,13 @@ export default function Navigation() {
               </svg>
             </div>
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
-              <li className="border-b border-black-400 my-8 uppercase">
+              <li className="border-b border-black my-8 uppercase">
                 <Link href="/">Accueil</Link>
               </li>
-              <li className="border-b border-black-400 my-8 uppercase">
+              <li className="border-b border-black my-8 uppercase">
                 <Link href="/pokemons">Pokémons</Link>
               </li>
-              <li className="border-b border-black-400 my-8 uppercase">
+              <li className="border-b border-black my-8 uppercase">
                 <Link href="/contact">Contact</Link>
               </li>
             </ul>
