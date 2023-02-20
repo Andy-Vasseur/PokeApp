@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import type { Pokemon } from "@/types/pokemon";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
@@ -67,17 +68,25 @@ export default function Home() {
                 #{pokemon.pokedexId} {pokemon.name}
               </h3>
               <div className="flex gap-2 justify-center">
-                {pokemon.apiTypes.map((type) => (
-                  <img
+                {pokemon.apiTypes.map((type: any) => (
+                  <Image
                     key={type.name}
                     src={type.image}
                     alt={type.name}
-                    className="w-6"
+                    title={type.name}
+                    width={24}
+                    height={24}
                   />
                 ))}
               </div>
               <div>
-                <img src={pokemon.image} alt={pokemon.name} />
+                <Image
+                  src={pokemon.image}
+                  alt={pokemon.name}
+                  title={pokemon.name}
+                  width={370.5}
+                  height={370.5}
+                />
               </div>
             </Link>
           ))}

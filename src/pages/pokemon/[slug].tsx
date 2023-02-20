@@ -4,7 +4,7 @@ import type { Pokemon } from "@/types/pokemon";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
 
 export default function Pokemon() {
   const router = useRouter();
@@ -38,7 +38,7 @@ export default function Pokemon() {
                 #{pokemon.pokedexId} {pokemon.name}
               </h2>
               <div className="flex justify-center items-center">
-                {pokemon.apiTypes.map((type) => (
+                {pokemon.apiTypes.map((type: { name: Key | null | undefined; image: string | undefined; }) => (
                   <img
                     className="w-6"
                     key={type.name}
