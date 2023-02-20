@@ -50,3 +50,4 @@ declare module namespace {
 
 }
 
+export { namespace }
