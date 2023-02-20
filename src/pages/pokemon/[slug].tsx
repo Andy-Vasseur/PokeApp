@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Stats from "@/components/stats";
 import type { Pokemon } from "@/types/pokemon";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Key, useEffect, useState } from "react";
@@ -31,21 +32,28 @@ export default function Pokemon() {
         <div className='shadow-sm max-w-4xl bg-white mx-auto mt-2 rounded-md p-1'>
           <div className="flex flex-col items-center bg-pokeblue rounded-sm md:justify-center md:flex-row">
             <div>
-              <img className="w-96" src={pokemon.image} alt={pokemon.name} title={pokemon.name} />
+              <Image
+                src={pokemon.image}
+                alt={pokemon.name}
+                title={pokemon.name}
+                width={384}
+                height={384}
+              />
             </div>
             <div className="col-span-2 text-center md:ml-8">
               <h2 className="text-xl font-bold text-white my-3">
                 #{pokemon.pokedexId} {pokemon.name}
               </h2>
               <div className="flex justify-center items-center">
-                {pokemon.apiTypes.map((type: { name: Key | null | undefined; image: string | undefined; }) => (
-                  <img
-                    className="w-6"
-                    key={type.name}
-                    src={type.image}
-                    alt={type.name}
-                    title={type.name}
-                  />
+                {pokemon.apiTypes.map((type: any) => (
+                <Image
+                  key={type.name}
+                  src={type.image}
+                  alt={type.name}
+                  title={type.name}
+                  width={24}
+                  height={24}
+                />
                 ))}
               </div>
               <div className="mt-3">
