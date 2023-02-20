@@ -91,6 +91,22 @@ export default function Home() {
             </Link>
           ))}
         </div>
+        <div className="flex justify-center mt-6 gap-2 my-2">
+          <button
+            className="bg-white p-2 rounded-md shadow-sm disabled:bg-gray-500"
+            onClick={() => setPageNumber(pageNumber - 1)}
+            disabled={pageNumber === 0}
+          >
+            Page précédente
+          </button>
+          <button
+            className="bg-white p-2 rounded-md shadow-sm disabled:bg-gray-500"
+            onClick={() => setPageNumber(pageNumber + 1)}
+            disabled={pokemonsFiltered?.length !== numberPerPage}
+          >
+            Page suivante
+          </button>
+        </div>
       </main>
     </>
   );
